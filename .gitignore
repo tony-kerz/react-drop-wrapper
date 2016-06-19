@@ -1,0 +1,8 @@
+*.sw*
+*~
+.idea/
+build/
+node_modules/
+npm-debug.log
+.DS_Store
+*.iml
