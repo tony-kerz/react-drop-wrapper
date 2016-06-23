@@ -1,3 +1,17 @@
 {
-  "presets": ["es2015", "stage-0", "react"]
+  "plugins": ["transform-object-assign"],
+  "presets": ["es2015", "stage-0", "react"],
+  "env": {
+    "test": {
+      "plugins": [
+        [
+          "babel-plugin-webpack-loaders",
+          {
+            "config": "${CONFIG}",
+            "verbose": true,
+          }
+        ]
+      ]
+    }
+  }
 }

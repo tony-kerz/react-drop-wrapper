@@ -1,20 +1,27 @@
-import test from 'ava'
+import {expect} from 'chai'
 import React from 'react'
-import ReactDOM from 'react-dom'
-import TestUtils from 'react-addons-test-utils'
-import Dropx from '../src'
+import {mount} from 'enzyme'
+import Drop from '../src'
 
-test.beforeEach(t => {
-  const drop = TestUtils.renderIntoDocument(
-    <Dropx>
-      <div>target</div>
-      <div>content</div>
-    </Dropx>
-  )
-  t.context.dropNode = ReactDOM.findDOMNode(drop)
-})
+describe('Drop', () => {
+  let wrapper = null
 
-test('should kinda work', t => {
-  const {dropNode} = t.context
-  TestUtils.Simulate.hover(dropNode)
+  beforeEach(() => {
+    wrapper = mount(
+      <Drop>
+        <div>target</div>
+        <div>content</div>
+      </Drop>
+    )
+  })
+
+  it('should kinda work', () => {
+    const dropTargetWrapper = wrapper.find('.drop-target')
+    expect(dropTargetWrapper).to.have.length(1)
+    expect(dropTargetWrapper.hasClass('drop-target')).to.equal(true)
+    // http://stackoverflow.com/questions/37981798/can-i-test-that-a-css-class-is-added-by-a-simulated-event-using-enzyme
+    //dropTargetWrapper.simulate('mouseover')
+    //expect(dropTargetWrapper.hasClass('drop-enabled')).to.equal(true)
+  })
+
 })

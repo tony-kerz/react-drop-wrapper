@@ -1,6 +1,7 @@
 const ProvidePlugin = require('webpack/lib/ProvidePlugin')
 var DedupePlugin = require('webpack/lib/optimize/DedupePlugin')
 const dbg = require('debug')('webpack:config:common')
+const path = require('path')
 const argv = require('minimist')(process.argv.slice(2))
 
 dbg('argv=%o', argv)
@@ -8,11 +9,11 @@ dbg('argv=%o', argv)
 module.exports = {
   entry: {
     app: [
-      './src/index.jsx'
+      path.join(__dirname, '../src/index.jsx')
     ]
   },
   output: {
-    path: './dist',
+    path: path.join(__dirname, '../dist'),
     filename: 'index.js',
     libraryTarget: 'commonjs2'
   },

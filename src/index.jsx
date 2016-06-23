@@ -2,6 +2,7 @@ import debug from 'debug'
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import Drop from 'tether-drop'
+import _ from 'lodash'
 import 'tether-drop/dist/css/drop-theme-arrows.css'
 const dbg = debug('react-drop-wrapper')
 
@@ -22,7 +23,7 @@ export default class extends Component {
   componentDidMount() {
     dbg('cdm: props=%o, drop-target=%o, drop-content=%o', this.props, this.dropTarget, this.dropContent)
     this.drop = new Drop(
-      Object.assign(
+      _.extend(
         {
           target: ReactDOM.findDOMNode(this.dropTarget),
           content: ReactDOM.findDOMNode(this.dropContent),
