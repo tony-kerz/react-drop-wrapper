@@ -1,6 +1,6 @@
 {
   "name": "react-drop-wrapper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react tether-drop wrapper",
   "main": "dist/index.js",
   "repository": {
