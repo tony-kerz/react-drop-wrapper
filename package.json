@@ -1,6 +1,6 @@
 {
   "name": "react-drop-wrapper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "react tether-drop wrapper",
   "main": "dist/index.js",
   "repository": {
@@ -8,7 +8,7 @@
     "url": "https://github.com/tony-kerz/react-drop-wrapper.git"
   },
   "scripts": {
-    "ava": "DEBUG=test CONFIG=$(pwd)/webpack/webpack.test.config.js BABEL_DISABLE_CACHE=1 NODE_ENV=test ava -v ./test-ava",
+    "ava": "DEBUG=test CONFIG=$(pwd)/webpack/webpack.test.config.js BABEL_DISABLE_CACHE=1 NODE_ENV=test ava -v ./ava",
     "mocha": "DEBUG=test CONFIG=$(pwd)/webpack/webpack.test.config.js BABEL_DISABLE_CACHE=1 NODE_ENV=test mocha",
     "preava": "npm run mocha",
     "test": "npm run ava",
